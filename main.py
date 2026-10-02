@@ -8,8 +8,9 @@ def main():
     sandbox = CodeSandbox(timeout_seconds=15)
 
     # user_task = "Write a Python script that generates a 5x5 Pascal's Triangle using NumPy and prints the matrix to terminal."
-
-    messages = [{"role": "user","content": [{"type": "text", "text": f"{SYSTEM_PROMPT}"}]}]
+    user_task=input("Whats on your mind ? ")
+    messages = [{"role": "system","content": [{"type": "text", "text": f"{SYSTEM_PROMPT}"}]},
+                {"role":"user","content":user_task}]
 
     max_attempts = 25
     for attempt in range(1, max_attempts + 1):
